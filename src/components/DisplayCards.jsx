@@ -26,7 +26,20 @@ const DisplayCards = ({ inputValue, btnValue }) => {
     }
   }, [inputValue, btnValue]);
 
-  const { data } = useFetch(url);
+  const { data, loading, error } = useFetch(url);
+
+  if (loading) {
+    return <div className="flex items-center justify-center">Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center">
+        Error: {error.message}
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-wrap gap-12 justify-center items-center w-4/5 min-h-[100vh] mx-auto mt-10">
       {data?.map((country, idx) => (
