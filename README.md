@@ -8,4 +8,4 @@
 - Tailwind css
 - Axios
 
-live :
+live : https://react-country-info.vercel.app/
