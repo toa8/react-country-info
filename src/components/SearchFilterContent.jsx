@@ -1,13 +1,10 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 // Components
 import Input from "./UI/Input";
 import FilterButton from "./UI/FilterButton";
 
-const SearchFilterContent = () => {
+const SearchFilterContent = ({ setInputValue, setBtnValue }) => {
   const continents = ["Europe", "America", "Asia", "Africa", "Oceania"];
-
-  const [inputValue, setInputValue] = React.useState("");
-  const [btnValue, setBtnValue] = React.useState("");
 
   const handleInput = (e) => {
     const { value } = e.target;
@@ -24,15 +21,9 @@ const SearchFilterContent = () => {
       <form className="flex">
         <Input
           type="text"
-          placeholder="Enter a country..."
+          placeholder="Enter a country name..."
           onChange={handleInput}
         />
-        <button
-          type="submit"
-          className="w-32 bg-slate-200 rounded-sm border-gray-200 border-2"
-        >
-          Search
-        </button>
       </form>
       <div className="flex gap-4">
         {continents.map((continent, idx) => (

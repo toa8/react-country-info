@@ -9,6 +9,7 @@ const CountryCard = ({ data, idx }) => {
               className="w-full h-full rounded-t-lg cursor-pointer"
               src={data.flags?.png}
               alt={data.flags?.alt}
+              loading="lazy"
             />
           </div>
           <div className=" mt-4 flex gap-2 flex-col ">
