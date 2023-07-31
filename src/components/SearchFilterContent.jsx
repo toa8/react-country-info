@@ -4,6 +4,8 @@ import Input from "./UI/Input";
 import FilterButton from "./UI/FilterButton";
 
 const SearchFilterContent = () => {
+  const continents = ["Europe", "America", "Asia", "Africa", "Oceania"];
+
   const [inputValue, setInputValue] = React.useState("");
   const [btnValue, setBtnValue] = React.useState("");
 
@@ -33,11 +35,9 @@ const SearchFilterContent = () => {
         </button>
       </form>
       <div className="flex gap-4">
-        <FilterButton name={"Europe"} onClick={handleButton} />
-        <FilterButton name={"Africa"} onClick={handleButton} />
-        <FilterButton name={"America"} onClick={handleButton} />
-        <FilterButton name={"Asia"} onClick={handleButton} />
-        <FilterButton name={"Oceania"} onClick={handleButton} />
+        {continents.map((continent, idx) => (
+          <FilterButton name={continent} key={idx} onClick={handleButton} />
+        ))}
       </div>
     </div>
   );
