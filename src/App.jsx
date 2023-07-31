@@ -31,18 +31,18 @@ const App = () => {
   const { data } = useFetch(url);
 
   return (
-    <>
+    <div className="w-full min-h-[100vh]">
       <Navbar />
       <SearchFilterContent
         setBtnValue={setBtnValue}
         setInputValue={setInputValue}
       />
-      <div className="mt-10 flex items-center justify-center flex-wrap gap-8 w-4/5 mx-auto">
-        {data?.map((item, idx) => (
-          <CountryCard data={item} key={idx} />
+      <div className="flex flex-wrap gap-12 justify-center items-center w-4/5 min-h-[100vh] mx-auto mt-10">
+        {data?.map((country, idx) => (
+          <CountryCard data={country} key={idx} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

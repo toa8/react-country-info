@@ -25,7 +25,7 @@ const SearchFilterContent = ({ setInputValue, setBtnValue }) => {
           onChange={handleInput}
         />
       </form>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4 md:items-center justify-center">
         {continents.map((continent, idx) => (
           <FilterButton name={continent} key={idx} onClick={handleButton} />
         ))}
