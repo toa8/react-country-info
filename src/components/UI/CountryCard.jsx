@@ -3,9 +3,12 @@ const CountryCard = ({ data, idx }) => {
   const formattedPopulation = new Intl.NumberFormat().format(data.population);
 
   return (
-    <div className="flex flex-col w-1/4 h-[100vh]" key={idx}>
+    <>
       {data ? (
-        <>
+        <div
+          className="flex flex-col w-4/5 items-center h-[100vh] md:w-1/4 "
+          key={idx}
+        >
           <div className="w-full h-1/3">
             <img
               className="w-full h-full rounded-t-lg cursor-pointer"
@@ -14,7 +17,7 @@ const CountryCard = ({ data, idx }) => {
               loading="lazy"
             />
           </div>
-          <div className=" mt-4 flex gap-2 flex-col ">
+          <div className="mt-4 flex gap-2 flex-col">
             <p className="font-bold text-3xl text-stone-800 text-center">
               {data.name?.common}
             </p>
@@ -41,11 +44,11 @@ const CountryCard = ({ data, idx }) => {
               </a>
             </p>
           </div>
-        </>
+        </div>
       ) : (
         "Loading..."
       )}
-    </div>
+    </>
   );
 };
 

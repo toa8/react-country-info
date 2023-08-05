@@ -41,7 +41,7 @@ const DisplayCards = ({ inputValue, btnValue }) => {
   }
 
   return (
-    <div className="flex flex-wrap gap-12 justify-center items-center w-4/5 min-h-[100vh] mx-auto mt-10">
+    <div className="mt-10 w-4/5 mx-auto flex flex-wrap flex-col gap-8 justify-center items-center md:flex-row">
       {data?.map((country, idx) => (
         <CountryCard data={country} key={idx} />
       ))}
